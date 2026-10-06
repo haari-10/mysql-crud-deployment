@@ -1,5 +1,6 @@
 require("dotenv").config();
 const { faker } = require('@faker-js/faker');
+const port=process.env.PORT || 3000;
 let getRandomUser=()=> {
   return [
      faker.string.uuid(),
@@ -215,6 +216,6 @@ app.delete("/user/:id",(req,res)=>{
     }
 })
 
-app.listen("3000",()=>{
-    console.log("server is listening to port");
+app.listen(port,()=>{
+    console.log(`server is listening to port ${port}`);
 })
